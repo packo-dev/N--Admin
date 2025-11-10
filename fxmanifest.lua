@@ -29,6 +29,7 @@ server_scripts {
 
 client_scripts {
     'client/main.lua',
+    'client/report_client.lua', -- ✅ NOUVEAU : Reports côté client
     'client/player_actions.lua',
     'client/vehicle_actions.lua',
     'client/server_actions.lua',

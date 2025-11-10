@@ -206,20 +206,8 @@ AddEventHandler('admin:getReports', function()
     TriggerClientEvent('admin:receiveReports', source, activeReports)
 end)
 
--- Commande /report pour les joueurs
-RegisterCommand('report', function(source, args)
-    if #args < 1 then
-        TriggerClientEvent('chat:addMessage', source, {
-            color = {255, 165, 0},
-            multiline = true,
-            args = {"N-Admin", "Usage: /report [votre message]"}
-        })
-        return
-    end
-    
-    local message = table.concat(args, " ")
-    TriggerServerEvent('admin:createReport', message)
-end)
+-- La commande /report est maintenant dans client/report_client.lua
+-- Event serveur pour recevoir le report
 
 -- Nettoyer les reports des joueurs déconnectés
 Citizen.CreateThread(function()
