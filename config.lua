@@ -15,7 +15,7 @@ Config.ConsoleLogs = true
 -- Système de permissions (identifiants Steam/Discord/License)
 Config.Admins = {
     -- SUPERADMIN (Accès total)
-    ["steam:110000XXXXXXXX"] = "superadmin",
+    ["steam:11000014a8afc10"] = "superadmin",
     ["discord:123456789012345678"] = "superadmin",
     
     -- ADMIN (Accès élevé)

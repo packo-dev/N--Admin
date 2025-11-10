@@ -59,15 +59,20 @@ AddEventHandler('admin:openMenu', function()
     TriggerServerEvent('admin:getRank')
 end)
 
--- Fonction pour ouvrir le menu
+-- Fonction pour ouvrir le menu (CORRIGÉ - Bug réouverture)
 function OpenMenu(players)
     if menuOpen then
         CloseMenu()
         return
     end
     
+    -- Forcer reset du NUI focus au cas où
+    SetNuiFocus(false, false)
+    Citizen.Wait(50) -- Petit délai pour assurer le reset
+    
     menuOpen = true
     SetNuiFocus(true, true)
+    SetNuiFocusKeepInput(false) -- Désactiver les inputs jeu
     
     SendNUIMessage({
         action = 'openMenu',
@@ -82,14 +87,28 @@ function OpenMenu(players)
     })
 end
 
--- Fonction pour fermer le menu
+-- Fonction pour fermer le menu (CORRIGÉ)
 function CloseMenu()
-    menuOpen = false
-    SetNuiFocus(false, false)
+    if not menuOpen then return end -- Sécurité
     
+    menuOpen = false
+    
+    -- Envoyer au NUI d'abord
     SendNUIMessage({
         action = 'closeMenu'
     })
+    
+    -- Petit délai avant reset focus
+    Citizen.Wait(50)
+    
+    -- Reset complet du NUI focus
+    SetNuiFocus(false, false)
+    SetNuiFocusKeepInput(true)
+    
+    -- Double sécurité
+    Citizen.SetTimeout(100, function()
+        SetNuiFocus(false, false)
+    end)
 end
 
 -- NUI Callbacks
@@ -276,4 +295,13 @@ end)
 
 -- Fermer le menu avec ESC (OPTIMISÉ - 0.00ms)
 -- Le menu est fermé via NUI callback, pas besoin de thread constant
+
+-- Commande de secours pour débloquer le menu (si bug)
+RegisterCommand('fixmenu', function()
+    menuOpen = false
+    SetNuiFocus(false, false)
+    SetNuiFocusKeepInput(true)
+    SendNUIMessage({action = 'closeMenu'})
+    ShowNotification("~g~Menu débloqué")
+end)
 
