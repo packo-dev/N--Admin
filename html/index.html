@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N-Admin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="menu-container" class="hidden">
+        <div class="menu-wrapper">
+            <!-- Header -->
+            <div class="menu-header">
+                <div class="header-left">
+                    <h1>🛡️ N-Admin</h1>
+                    <div class="rank-badge" id="rank-badge">Loading...</div>
+                </div>
+                <div class="header-right">
+                    <div class="server-info" id="server-info">
+                        <span id="player-count">0/0</span>
+                    </div>
+                    <button class="close-btn" id="close-btn">✕</button>
+                </div>
+            </div>
+            
+            <!-- Credits Bar -->
+            <div class="credits-bar">
+                💜 Créé par discord : nano.pasa
+            </div>
+
+            <!-- Navigation Tabs -->
+            <div class="menu-tabs">
+                <button class="tab-btn active" data-tab="players">
+                    👥 Joueurs
+                </button>
+                <button class="tab-btn" data-tab="vehicles">
+                    🚗 Véhicules
+                </button>
+                <button class="tab-btn" data-tab="server">
+                    🖥️ Serveur
+                </button>
+                <button class="tab-btn" data-tab="tools">
+                    🛠️ Outils
+                </button>
+                <button class="tab-btn" data-tab="teleport">
+                    📍 Téléportation
+                </button>
+            </div>
+
+            <!-- Content Area -->
+            <div class="menu-content">
+                <!-- Players Tab -->
+                <div class="tab-content active" id="tab-players">
+                    <div class="search-bar">
+                        <input type="text" id="player-search" placeholder="🔍 Rechercher un joueur...">
+                        <button class="btn btn-primary" id="refresh-players">🔄 Actualiser</button>
+                    </div>
+                    
+                    <div class="players-list" id="players-list">
+                        <!-- Les joueurs seront ajoutés dynamiquement -->
+                    </div>
+                </div>
+
+                <!-- Vehicles Tab -->
+                <div class="tab-content" id="tab-vehicles">
+                    <div class="section">
+                        <h3>🚗 Spawn Véhicule</h3>
+                        <div class="vehicle-categories" id="vehicle-categories">
+                            <!-- Les catégories seront ajoutées dynamiquement -->
+                        </div>
+                        <div class="vehicle-grid" id="vehicle-grid">
+                            <!-- Les véhicules seront ajoutés dynamiquement -->
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <h3>🔧 Actions Véhicule</h3>
+                        <div class="action-grid">
+                            <button class="btn btn-primary" onclick="deleteVehicle()">🗑️ Supprimer</button>
+                            <button class="btn btn-success" onclick="repairVehicle()">🔧 Réparer</button>
+                            <button class="btn btn-info" onclick="cleanVehicle()">✨ Nettoyer</button>
+                            <button class="btn btn-warning" onclick="flipVehicle()">🔄 Retourner</button>
+                            <button class="btn btn-primary" onclick="maxTuneVehicle()">⚙️ Tune Max</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Server Tab -->
+                <div class="tab-content" id="tab-server">
+                    <div class="section">
+                        <h3>📢 Annonce</h3>
+                        <div class="input-group">
+                            <input type="text" id="announce-input" placeholder="Message d'annonce...">
+                            <button class="btn btn-primary" onclick="sendAnnounce()">📢 Envoyer</button>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3>🌤️ Météo</h3>
+                        <div class="weather-grid" id="weather-grid">
+                            <!-- Les météos seront ajoutées dynamiquement -->
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3>🕐 Heure</h3>
+                        <div class="time-controls">
+                            <input type="number" id="time-hour" min="0" max="23" value="12" placeholder="Heure">
+                            <span>:</span>
+                            <input type="number" id="time-minute" min="0" max="59" value="0" placeholder="Minute">
+                            <button class="btn btn-primary" onclick="setTime()">⏰ Définir</button>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3>🧹 Nettoyage</h3>
+                        <div class="action-grid">
+                            <button class="btn btn-warning" onclick="clearArea(50)">🧹 Zone 50m</button>
+                            <button class="btn btn-warning" onclick="clearArea(100)">🧹 Zone 100m</button>
+                            <button class="btn btn-danger" onclick="clearVehicles()">🚗 Tous Véhicules</button>
+                            <button class="btn btn-danger" onclick="clearPeds()">🚶 Tous PNJ</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools Tab -->
+                <div class="tab-content" id="tab-tools">
+                    <div class="section">
+                        <h3>🛠️ Outils Personnels</h3>
+                        <div class="tools-grid">
+                            <button class="btn btn-tool" onclick="toggleNoclip()">
+                                <span class="tool-icon">✈️</span>
+                                <span class="tool-name">Noclip</span>
+                            </button>
+                            <button class="btn btn-tool" onclick="toggleGodMode()">
+                                <span class="tool-icon">🛡️</span>
+                                <span class="tool-name">God Mode</span>
+                            </button>
+                            <button class="btn btn-tool" onclick="toggleInvisible()">
+                                <span class="tool-icon">👻</span>
+                                <span class="tool-name">Invisible</span>
+                            </button>
+                            <button class="btn btn-tool" onclick="healSelf()">
+                                <span class="tool-icon">💚</span>
+                                <span class="tool-name">Se Soigner</span>
+                            </button>
+                            <button class="btn btn-tool" onclick="suicide()">
+                                <span class="tool-icon">💀</span>
+                                <span class="tool-name">Suicide</span>
+                            </button>
+                            <button class="btn btn-tool" onclick="teleportToWaypoint()">
+                                <span class="tool-icon">📍</span>
+                                <span class="tool-name">TP Waypoint</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teleport Tab -->
+                <div class="tab-content" id="tab-teleport">
+                    <div class="section">
+                        <h3>📍 Lieux Rapides</h3>
+                        <div class="location-grid" id="location-grid">
+                            <!-- Les lieux seront ajoutés dynamiquement -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal pour actions joueurs -->
+        <div id="player-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Actions - <span id="modal-player-name"></span></h3>
+                    <button class="close-btn" onclick="closePlayerModal()">✕</button>
+                </div>
+                <div class="modal-body">
+                    <div class="action-grid">
+                        <button class="btn btn-danger" onclick="kickPlayer()">🚫 Kick</button>
+                        <button class="btn btn-danger" onclick="banPlayer()">🔨 Ban</button>
+                        <button class="btn btn-warning" onclick="freezePlayer()">❄️ Freeze</button>
+                        <button class="btn btn-primary" onclick="teleportToPlayer()">🚀 Goto</button>
+                        <button class="btn btn-primary" onclick="bringPlayer()">📥 Bring</button>
+                        <button class="btn btn-info" onclick="spectatePlayer()">👁️ Spectate</button>
+                        <button class="btn btn-success" onclick="revivePlayer()">💚 Revive</button>
+                        <button class="btn btn-success" onclick="healPlayer()">❤️ Heal</button>
+                        <button class="btn btn-success" onclick="giveArmor()">🛡️ Armure</button>
+                        <button class="btn btn-danger" onclick="killPlayer()">💀 Kill</button>
+                    </div>
+
+                    <div class="input-group mt-20">
+                        <input type="text" id="kick-reason" placeholder="Raison du kick...">
+                        <button class="btn btn-danger" onclick="kickPlayerWithReason()">🚫 Kick</button>
+                    </div>
+
+                    <div class="input-group mt-10">
+                        <input type="text" id="ban-reason" placeholder="Raison du ban...">
+                        <input type="text" id="ban-duration" placeholder="Durée (ex: 24h, permanent)">
+                        <button class="btn btn-danger" onclick="banPlayerWithReason()">🔨 Ban</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Credits -->
+            <div class="menu-footer">
+                <div class="footer-content">
+                    <span class="footer-text">💜 N-Admin - Créé par discord : nano.pasa</span>
+                    <span class="footer-version">Version 1.0.0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,90 @@
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║           ⚠️  ATTENTION - LICENCE NON-COMMERCIALE  ⚠️         ║
+║                                                               ║
+║                  N-Admin pour FiveM                           ║
+║            Créé par discord : nano.pasa                       ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ VOUS POUVEZ (GRATUIT) :
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ✅ Utiliser ce menu gratuitement sur votre serveur FiveM
+  ✅ Modifier le code pour l'adapter à vos besoins
+  ✅ Partager ce menu avec d'autres (GRATUITEMENT)
+  ✅ Apprendre du code source
+  ✅ Créer des versions modifiées (GRATUITES)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ VOUS NE POUVEZ PAS :
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ❌ VENDRE ce menu (même modifié)
+  ❌ Demander de l'argent pour y accéder
+  ❌ L'inclure dans un pack payant
+  ❌ Mettre derrière un paywall
+  ❌ Retirer les crédits "nano.pasa"
+  ❌ Prétendre en être l'auteur
+  ❌ Faire payer pour du support
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚠️  IMPORTANT - CRÉDITS OBLIGATOIRES :
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Les crédits "Créé par discord : nano.pasa" DOIVENT rester :
+
+  📝 Dans tous les fichiers de code
+  🎨 Dans l'interface utilisateur (menu)
+  💻 Dans les messages console (serveur + client)
+  📄 Dans la documentation
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚖️  EN CAS DE VIOLATION :
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Si vous vendez ce menu ou retirez les crédits :
+
+  🚫 Vous perdez TOUS les droits d'utilisation
+  📧 Vous devrez supprimer toutes les copies
+  ⚖️ Des actions légales peuvent être engagées
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📞 CONTACT :
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Discord : nano.pasa
+
+  Pour toute question sur la licence ou permissions spéciales
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 RÉSUMÉ EN 3 POINTS :
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. ✅ GRATUIT - Utilisez et partagez gratuitement
+  2. ❌ PAS DE VENTE - Ne vendez jamais ce menu
+  3. 💜 CRÉDITS - Gardez "nano.pasa" visible
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Merci de respecter le travail de l'auteur ! 💜
+
+© 2025 nano.pasa (Discord) - Tous droits réservés
+Licence complète disponible dans le fichier LICENSE
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+

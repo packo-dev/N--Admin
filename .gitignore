@@ -1,0 +1,27 @@
+# Fichiers de configuration locaux
+config_local.lua
+
+# Logs
+*.log
+
+# Fichiers temporaires
+*.tmp
+*.temp
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Cache
+__pycache__/
+*.pyc
+.cache/
+
